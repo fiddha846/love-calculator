@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Calculator 💘</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="hearts-bg" aria-hidden="true"></div>
+
+  <main class="card">
+    <header class="title">
+      <h1>Love<span>Calculator</span></h1>
+      <p class="subtitle">Find out if you two are a match made in heaven 💫</p>
+    </header>
+
+    <form id="love-form" autocomplete="off">
+      <div class="inputs">
+        <div class="field">
+          <label for="name1">Your name</label>
+          <input type="text" id="name1" placeholder="e.g. Romeo" maxlength="24" required>
+        </div>
+
+        <div class="heart-divider" id="heart-divider">
+          <span class="pulse-heart">❤</span>
+        </div>
+
+        <div class="field">
+          <label for="name2">Their name</label>
+          <input type="text" id="name2" placeholder="e.g. Juliet" maxlength="24" required>
+        </div>
+      </div>
+
+      <div class="mood-picker">
+        <span class="mood-label">Today I feel...</span>
+        <div class="moods" id="moods">
+          <button type="button" class="mood" data-mood="shy">😳 Shy</button>
+          <button type="button" class="mood" data-mood="bold">😎 Bold</button>
+          <button type="button" class="mood active" data-mood="dreamy">😍 Dreamy</button>
+          <button type="button" class="mood" data-mood="silly">🤪 Silly</button>
+        </div>
+      </div>
+
+      <button type="submit" class="calc-btn" id="calc-btn">
+        Calculate Love
+      </button>
+    </form>
+
+    <section class="result" id="result" aria-live="polite">
+      <div class="loader" id="loader">
+        <div class="loader-heart">💗</div>
+        <p id="loader-text">Consulting the stars...</p>
+      </div>
+
+      <div class="result-content" id="result-content">
+        <div class="score-wrap">
+          <svg class="score-ring" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff4d8d"></stop>
+                <stop offset="100%" stop-color="#8e44ff"></stop>
+              </linearGradient>
+            </defs>
+            <circle class="ring-bg" cx="100" cy="100" r="88"></circle>
+            <circle class="ring-fill" id="ring-fill" cx="100" cy="100" r="88"></circle>
+          </svg>
+          <div class="score-text">
+            <span id="score-num">0</span><span class="pct">%</span>
+          </div>
+        </div>
+
+        <h2 class="result-title" id="result-title"></h2>
+        <p class="result-message" id="result-message"></p>
+
+        <div class="stars" id="stars"></div>
+
+        <div class="actions">
+          <button type="button" class="ghost-btn" id="share-btn">Copy result 📋</button>
+          <button type="button" class="ghost-btn" id="again-btn">Try again 🔄</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>For fun only — real love is measured in kindness, not percentages. 💕</p>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
