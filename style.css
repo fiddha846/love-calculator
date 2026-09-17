@@ -22,10 +22,28 @@ body {
   align-items: center;
   justify-content: center;
   padding: 28px 16px;
-  background: linear-gradient(135deg, #ffe3ef 0%, #f5d6ff 45%, #d9e4ff 100%);
+  background: #f6d9e8;
+  overflow-x: hidden;
+}
+
+/* Background picture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("icon.jpg") center / cover no-repeat;
+  z-index: -2;
+}
+
+/* Soft overlay so the text stays readable */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 227, 239, 0.72) 0%, rgba(245, 214, 255, 0.68) 45%, rgba(217, 228, 255, 0.72) 100%);
   background-size: 200% 200%;
   animation: gradientShift 16s ease infinite;
-  overflow-x: hidden;
+  z-index: -1;
 }
 
 @keyframes gradientShift {
